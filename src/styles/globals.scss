@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  // @font-face {
+  //   font-family: IRANSans;
+  //   font-style: normal;
+  //   font-weight: normal;
+  //   src: url("../../public/assets/fonts/IRANSans(FaNum).ttf") format("truetype");
+  //   font-display: swap;
+  // }
+
+  body,
+  html {
+    @apply p-0 m-0 h-full text-black text-[14px];
+    // font-family: "IRANSans", arial;
+  }
+
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  .bg-image {
+    background-image: url('/assets/images/slide2.jpg');
+    opacity: 0.01
+  }
+
+  #__next {
+    @apply min-h-full flex flex-col;
+  }
+
+  .siteContent {
+    flex: 1 0 auto;
+    gap: 8px;
+    margin-top: 133px;
+    margin-bottom: 40px;
+  }
+
+  .siteContent:after {
+    content: "\00a0";
+    @apply block h-0 invisible;
+  }
+
+  h1 {
+    @apply text-xl mb-[12px] mt-[18px];
+  }
+
+  h2 {
+    @apply text-lg mb-[10px] mt-[15px];
+  }
+
+  h3 {
+    @apply text-base mb-[8px] mt-[12px];
+  }
+
+  h4 {
+    @apply text-sm mb-[6px] mt-[10px];
+  }
+
+  h5 {
+    @apply text-xs mb-[4px] mt-[8px];
+  }
+
+  h6 {
+    @apply text-xs font-light mb-[2px] mt-[6px];
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #cca937;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cca937;
+  }
+}
+
+@layer components {
+
+  table tr td,
+  table tr th {
+    @apply flex flex-1 justify-center md:block;
+  }
+
+  .priceVolatility {
+    direction: ltr;
+  }
+
+  .gradientCircle {
+    background: radial-gradient(40% 40% at 50% 50%,
+        rgb(240 242 243) 50%,
+        rgb(202 216 230) 100%);
+  }
+
+  /***tabs***/
+  .tab {
+    @apply inline-block px-3 pt-5 pb-2 cursor-pointer whitespace-nowrap;
+  }
+
+  .tab:after {
+    @apply h-[2px] m-auto;
+    content: "";
+    background: transparent;
+    transition:
+      width 0.5s ease,
+      background-color 0.5s ease;
+  }
+
+  //***title***
+  .title:before,
+  .title:after,
+  .titleRight:after {
+    @apply border-b border-gray-100 m-auto;
+    content: "";
+    flex: 1 1;
+  }
+}
